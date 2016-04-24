@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--currentForecast-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="currentForecast" spacing="0.0" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WristWeather_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" spacing="0.0" id="1qD-PE-cTU">
+                            <items>
+                                <label alignment="left" text="Minneapolis, MN" id="A1P-eQ-Jdz" userLabel="Location"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="0.0" id="rFS-MJ-hj6">
+                            <items>
+                                <label alignment="left" text="Temp: " id="3M2-RL-ps1"/>
+                                <label alignment="right" verticalAlignment="center" text="--°" id="hGz-ub-qJ0"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="0.0" id="oPS-Vn-ChS">
+                            <items>
+                                <label alignment="left" text="today's high: " id="dY4-C7-Yfq"/>
+                                <label alignment="right" verticalAlignment="center" text="--°" id="rrK-fr-MBi"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="6A1-s4-TwX">
+                            <items>
+                                <label alignment="left" text="today's low: " id="npf-YV-DDf"/>
+                                <label alignment="right" verticalAlignment="center" text=" --°" id="DZR-l4-qiO"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="hHO-Wc-4Kn">
+                            <items>
+                                <label alignment="left" text="forecast:" id="GIp-tT-lC3"/>
+                                <label height="39" alignment="left" text="----------------------------" numberOfLines="2" id="dfk-hC-sC9"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="0.0" id="HSG-LY-cij">
+                            <items>
+                                <button width="1" height="26" alignment="left" hidden="YES" title="Full Forcast" id="yON-lw-6H1">
+                                    <connections>
+                                        <action selector="seeDays" destination="AgC-eL-Hgc" id="u56-nW-AMX"/>
+                                    </connections>
+                                </button>
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="Progress0" animationDuration="35" id="INU-oO-Vzv"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="currentSummary" destination="dfk-hC-sC9" id="bcV-H3-zPy"/>
+                        <outlet property="currentTemp" destination="hGz-ub-qJ0" id="ZXg-xW-37g"/>
+                        <outlet property="location" destination="A1P-eQ-Jdz" id="afW-Gi-4w1"/>
+                        <outlet property="spinner" destination="INU-oO-Vzv" id="cvJ-Rx-gBo"/>
+                        <outlet property="todaysHigh" destination="rrK-fr-MBi" id="bQ2-Ew-S6W"/>
+                        <outlet property="todaysLow" destination="DZR-l4-qiO" id="Qmo-yk-VfI"/>
+                        <outlet property="viewFull" destination="yON-lw-6H1" id="1f0-Gd-rX6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="155" y="204"/>
+        </scene>
+        <!--DayForecast-->
+        <scene sceneID="nZW-qs-w8t">
+            <objects>
+                <controller identifier="DayForecast" id="UAy-PJ-lWy" customClass="DayView" customModule="WristWeather_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="0.0" id="LMr-Rh-UJC">
+                            <items>
+                                <group width="1" alignment="left" id="MsN-vs-om7">
+                                    <items>
+                                        <label alignment="left" text="forecast:" id="soy-su-XXP"/>
+                                        <button width="20" height="20" alignment="right" title="X" id="fPN-J7-7jh">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="10"/>
+                                            <connections>
+                                                <action selector="dismissDayView" destination="UAy-PJ-lWy" id="UJ9-Wz-PaZ"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <label alignment="left" text="chance of rain" numberOfLines="3" id="puy-Ub-Can"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="ofX-yY-CRZ">
+                            <items>
+                                <label alignment="left" text="High:" id="UiH-bz-xye"/>
+                                <label alignment="left" text="70°" id="huf-jr-U82"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="4z2-YG-VPd">
+                            <items>
+                                <label alignment="left" text="Low:" id="lOH-rQ-xuh"/>
+                                <label alignment="left" text="70°" id="Jic-el-uCk"/>
+                            </items>
+                        </group>
+                        <group alignment="left" verticalAlignment="bottom" id="0IA-7n-Yrr">
+                            <items>
+                                <button width="0.5" height="40" alignment="left" verticalAlignment="center" title="⬅️" id="sQe-U0-bxW">
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="touchLeft" destination="UAy-PJ-lWy" id="o2F-C1-9V3"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" height="40" alignment="right" verticalAlignment="center" title="➡️" id="inU-UE-zy9">
+                                    <fontDescription key="font" type="system" pointSize="27"/>
+                                    <connections>
+                                        <action selector="touchRight" destination="UAy-PJ-lWy" id="V5j-09-nFE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="dayForecast" destination="puy-Ub-Can" id="P9e-6T-9qc"/>
+                        <outlet property="dayHigh" destination="huf-jr-U82" id="4gB-iF-xqQ"/>
+                        <outlet property="dayLow" destination="Jic-el-uCk" id="w66-qc-CqT"/>
+                        <outlet property="leftButton" destination="sQe-U0-bxW" id="fR1-6L-MXP"/>
+                        <outlet property="rightButton" destination="inU-UE-zy9" id="HE0-yW-cbm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="155" y="608"/>
+        </scene>
+    </scenes>
+</document>
