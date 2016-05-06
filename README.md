@@ -6,11 +6,17 @@ User Experience
 ----------------------
 #### Basic Use
 Once the application is launched, it attempts to get the weather for the location of the user
-TODO: insert loading image
+
+![loading](http://i.imgur.com/dcRdiIR.png)
+
 once this has completed it will display a current weather information
-TODO: insert weather image
+
+![loaded](http://i.imgur.com/LJVhqbU.png)
+
 by touching the button at the bottom of the screen you will see the detailed view of
 the upcoming weather.
+
+![dayView](http://i.imgur.com/uepjiGQ.png)
 
 by touching the arrows you can navigate though (typically) 8 days of weather information
 the x button will get you back to the main screen
